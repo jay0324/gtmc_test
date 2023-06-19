@@ -1,5 +1,92 @@
-@import 'lib/_rwd.scss';
+@import 'lib/_rwd';
+@import 'components/_videoCover';
+@import 'components/_line_animate';
+@import 'components/_cursor';
+@import 'components/_circle_link';
+@import 'components/_swiper';
+@import 'components/_pinPannel';
+@import 'components/_polygon';
+
+:root{
+    --primary: #14284D;
+}
+
+body,html{
+    scroll-behavior: smooth;
+}
 
 body{
-    background:#fff;
+    overflow-x:hidden;
+    background:var(--white);
+}
+
+.logo{
+    width:100px;
+    height:auto;
+    svg{
+        fill: var(--white);
+    }
+}
+
+.nav-bg{
+    background: #ffffff55;
+}
+
+#navBar{
+    a{
+        color:var(--white);
+        font-size:20px;
+        transition: 0.5s;
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+}
+
+#videoCover{
+    // .stage{
+    //     position:absolute;
+
+    //     .video{
+    //         position: absolute;
+    //     }
+    // }
+
+    overflow-y: initial;
+
+    .content{
+        h1{
+            font-size:6vw;
+        }
+    }
+
+    .line{
+        width: 3px;
+        height: 300PX;
+        background: #ccc;
+        position: absolute;
+        z-index: 3;
+        bottom: -180px;
+        right: 100px;
+    }
+}
+
+#FirstContent{
+    position:relative;
+    h1{
+        position:absolute;
+        right:6%;
+        top:15%;
+    }
+    .area-1{
+        width:600px;
+        position:absolute;
+        top:15%;
+        left:20%;
+        .text{
+            font-size:25px;
+            line-height:50px;
+            margin-bottom:30px;
+        }
+    }
 }

@@ -1,0 +1,82 @@
+.circle_link{
+    text-decoration: none;
+    padding-left:45px;
+    font-size:20px;
+    position: relative;
+    transition: 1s;
+
+    &::before,
+    &::after{
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transition:transform 1s;
+        transform-origin: top left;
+    }
+    &::before{
+        width: 36px;
+        height: 36px;
+        border-radius: 100%;
+        transform:scale(0) translate(0, -50%);
+        filter: brightness(0.8);
+    }
+    &::after{
+        width: 36px;
+        height: 1px;
+        transform: translate(0, -50%);
+    }
+
+    &:hover{
+        text-decoration: none;
+        padding-left:55px;
+
+        &::before{
+            transform:scale(1) translate(0, -50%);
+        }
+
+        &::after{
+            transform:translate(10px, -50%);
+        }
+    }
+
+    &.circle_link-white{
+        color: var(--white);
+        &::before,
+        &::after{
+            background: var(--white);
+        }
+    }
+
+    &.circle_link-primary{
+        color: var(--primary);
+        &::before,
+        &::after{
+            background: var(--primary);
+        }
+    }
+
+    &.circle_link-danger{
+        color: var(--danger);
+        &::before,
+        &::after{
+            background: var(--danger);
+        }
+    }
+
+    &.circle_link-dark{
+        color: var(--dark);
+        &::before,
+        &::after{
+            background: var(--dark);
+        }
+    }
+
+    &.circle_link-success{
+        color: var(--success);
+        &::before,
+        &::after{
+            background: var(--success);
+        }
+    }
+}

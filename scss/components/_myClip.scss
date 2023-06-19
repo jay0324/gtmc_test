@@ -1,0 +1,282 @@
+
+$max_line: 20;
+$x: 900;
+$angle: 65;
+$each_angle: 7;
+$stay_line: 7;
+$play_time: 6;
+
+#myClip{
+    display:block;
+    width:100%;
+    height:100%;
+
+    .mask{
+        fill:#11274A;
+        z-index:2;
+        transform-box: fill-box;
+        animation-duration: #{$play_time * 0.5}s;
+        // animation-timing-function: linear;
+        animation-timing-function: cubic-bezier(2, 1, 0, 1);
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        // animation-fill-mode: backwards;
+
+        &.top{
+            animation-name: top_mask;
+            transform-origin: revert;
+            transform: translate(#{$x+1}px, 0) rotate(-180deg) scale(1, 2);
+        }
+
+        &.bottom{
+            animation-name: bottom_mask;
+            transform-origin: bottom left;
+            transform: translate(#{$x+1}px, 0) rotate(180deg) scale(1, 2);
+        }
+    }
+    .shape{
+        animation-duration: #{$play_time}s;
+        // animation-timing-function: linear;
+        animation-timing-function: cubic-bezier(2, 1, 0, 1);
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        // animation-fill-mode: backwards;
+        transform-box: fill-box;
+        fill: #fff;
+
+        &.top{
+            transform-origin: top;
+        }
+
+        &.bottom{
+            transform-origin: bottom;
+        }
+        
+        @for $i from 0 through $max_line {
+            &.top_line_#{$i}{
+                animation-name: top_enter_#{$i};
+                transform: translate(#{$x}px, 0) rotate(-#{($angle - ($each_angle * $i))}deg) scale(1, #{1.5+(0.5*$i)});
+                @if $stay_line<$i {
+                    opacity:0;
+                }@else {
+                    opacity: #{1-(0.1*$i)};
+                }
+            }
+            &.bottom_line_#{$i}{
+                animation-name: bottom_enter_#{$i};
+                transform: translate(#{$x}px, 0) rotate(#{($angle - ($each_angle * $i))}deg) scale(1, #{1.5+(0.5*$i)});
+                @if $stay_line<$i {
+                    opacity:0;
+                }@else {
+                    opacity: #{1-(0.1*$i)};
+                }
+            }
+        }
+
+    }
+    .triangle{
+        fill:#fff;
+        z-index:2;
+        transform-box: fill-box;
+        // animation-timing-function: linear;
+        animation-timing-function: cubic-bezier(2, 1, 0, 1);
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-duration: 1.6s;
+        animation-delay: #{$play_time * 0.7}s;
+        opacity:1;
+
+        &.triangle-1{
+            // animation-name: triangle-1;
+            transform-origin: top;
+            // transform: translate(900px, 0) rotate(-65deg) scale(1, 1.5);
+            transform: translate(903px, 450px) scale(0.08, 1) rotate(-85deg);
+        }
+
+        &.triangle-2{
+            // animation-name: triangle-2;
+            transform-origin: top;
+            // transform: translate(900px, 0) rotate(-23deg) scale(1, 4.5);
+            transform: translate(981px, 534px) scale(0.22, 1) rotate(-97.2deg);
+        }
+
+        &.triangle-3{
+            // animation-name: triangle-3;
+            transform-origin: top;
+            // transform: translate(900px, 0) rotate(-30deg) scale(1, 4);
+            transform: translate(906px, 448px) scale(0.29,1) rotate(-92.2deg);
+        }
+    }
+}
+
+@keyframes triangle-1 {
+    0% {
+        transform: translate(900px, 0) rotate(-65deg) scale(1, 1.5);
+        opacity:0;
+    }
+
+    80% {
+        transform: translate(903px, 450px) scale(0.08, 1) rotate(-85deg);
+        opacity:1;
+    }
+
+    90% {
+        transform: translate(903px, 450px) scale(0.08, 1) rotate(-85deg);
+        opacity:1;
+    }
+
+    100% {
+        transform: translate(903px, 450px) scale(0.08, 1) rotate(-85deg);
+        opacity:0;
+    }
+}
+
+@keyframes triangle-2 {
+    0% {
+        transform: translate(900px, 0) rotate(-23deg) scale(1, 4.5);
+        opacity:0;
+    }
+
+    80% {
+        transform: translate(981px, 534px) scale(0.22, 1) rotate(-97.2deg);
+        opacity:1;
+    }
+
+    90% {
+        transform: translate(981px, 534px) scale(0.22, 1) rotate(-97.2deg);
+        opacity:1;
+    }
+
+    100% {
+        transform: translate(981px, 534px) scale(0.22, 1) rotate(-97.2deg);
+        opacity:0;
+    }
+}
+
+@keyframes triangle-3 {
+    0% {
+        transform: translate(900px, 0) rotate(-30deg) scale(1, 4);
+        opacity:0;
+    }
+
+    80% {
+        transform: translate(906px, 448px) scale(0.29,1) rotate(-92.2deg);
+        opacity:1;
+    }
+
+    90% {
+        transform: translate(906px, 448px) scale(0.29,1) rotate(-92.2deg);
+        opacity:1;
+    }
+
+    100% {
+        transform: translate(906px, 448px) scale(0.29,1) rotate(-92.2deg);
+        opacity:0;
+    }
+}
+
+@keyframes top_mask {
+    0% {
+        transform: translate(#{$x+1}px, 0) rotate(-180deg) scale(1, 2);
+    }
+
+    50% {
+        transform: translate(#{$x+1}px, 0) rotate(-180deg) scale(1, 2);
+    }
+
+    100% {
+        transform: translate(#{$x+1}px, 0) rotate(-#{$angle}deg) scale(1, 2);
+    }
+}
+
+@keyframes bottom_mask {
+    0% {
+        transform: translate(#{$x+1}px, 0) rotate(180deg) scale(1, 2);
+    }
+
+    50% {
+        transform: translate(#{$x+1}px, 0) rotate(180deg) scale(1, 2);
+    }
+
+    100% {
+        transform: translate(#{$x+1}px, 0) rotate(#{$angle}deg) scale(1, 2);
+    }
+}
+
+@for $i from 0 through $max_line {
+    @keyframes top_enter_#{$i} {
+        0% {
+            transform: translate(0, #{0 + (100*$i)}px) rotate(-90deg) scale(1, 0);
+            opacity: 0;
+        }
+
+        30% {
+            transform: translate(0, #{0 + (100*$i)}px) rotate(-90deg) scale(1, #{1.5+(0.5*$i)});
+            opacity: 1;
+        }
+
+        50% {
+            transform: translate(#{$x}px, 0) rotate(-#{($angle - ($each_angle * $i))}deg) scale(1, #{1.5+(0.5*$i)});
+            
+            @if $stay_line<$i {
+                opacity:0;
+            }@else {
+                opacity: #{1-(0.1*$i)};
+            }
+        }
+
+        70% {
+            transform: translate(#{$x}px, 0) rotate(-#{($angle - ($each_angle * $i))}deg) scale(1, #{1.5+(0.5*$i)});
+            
+            @if $stay_line<$i {
+                opacity:0;
+            }@else {
+                opacity: #{1-(0.1*$i)};
+            }
+        }
+
+        100% {
+            @if $stay_line>=$i {
+                transform: translate(906px, 448px) scale(0.29,1) rotate(-92.2deg);
+                opacity:0;
+            }
+        }
+    }
+
+    @keyframes bottom_enter_#{$i} {
+        0% {
+            transform: translate(#{0 + (100*$i)}px, 0) rotate(0) scale(1, 0);
+            opacity: 0;
+        }
+
+        30% {
+            transform: translate(#{0 + (100*$i)}px, 0) rotate(0) scale(1, #{1.5+(0.5*$i)});
+            opacity: 1;
+        }
+
+        50% {
+            transform: translate(#{$x}px, 0) rotate(#{($angle - ($each_angle * $i))}deg) scale(1, #{1.5+(0.5*$i)});
+            @if $stay_line<$i {
+                opacity:0;
+            }@else {
+                opacity: #{1-(0.1*$i)};
+            }
+        }
+
+        70% {
+            transform: translate(#{$x}px, 0) rotate(#{($angle - ($each_angle * $i))}deg) scale(1, #{1.5+(0.5*$i)});
+            @if $stay_line<$i {
+                opacity:0;
+            }@else {
+                opacity: #{1-(0.1*$i)};
+            }
+        }
+
+        100% {
+            @if $stay_line>=$i {
+                transform: translate(900px, 0) rotate(-23deg) scale(1, 4.5);
+                opacity:0;
+            }
+        }
+    }
+}
