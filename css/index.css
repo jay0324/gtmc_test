@@ -905,6 +905,10 @@ body, html {
   overflow-x: hidden;
 }
 
+.scroll-content, .scroller {
+  overflow-x: hidden;
+}
+
 body {
   overflow-x: hidden;
   background: var(--white);

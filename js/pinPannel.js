@@ -3,6 +3,11 @@ let bodyScrollBar = Scrollbar.init(document.getElementById('scrollContent'), {
   damping: 0.05,
   delegateTo: document,
 });
+
+bodyScrollBar.addListener((status) => {
+  bodyScrollBar.limit.x = 0
+});
+
 ScrollTrigger.scrollerProxy(".scroller", {
   scrollTop(value) {
     if (arguments.length) {

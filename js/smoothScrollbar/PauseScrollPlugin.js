@@ -2,7 +2,7 @@
 //使用方式為
 //ScrollBar實體.updatePluginOptions('pause', { pause: false }); //執行暫停
 //ScrollBar實體.updatePluginOptions('pause', { pause: true }); //停止暫停
-class PausePlugin extends Scrollbar.ScrollbarPlugin {
+class PauseScrollPlugin extends Scrollbar.ScrollbarPlugin {
     static pluginName = 'pause';
   
     static defaultOptions = {
@@ -13,4 +13,4 @@ class PausePlugin extends Scrollbar.ScrollbarPlugin {
       return this.options.pause ? { x: 0, y: 0 } : delta;
     }
   }
-  Scrollbar.use(PausePlugin);
+  Scrollbar.use(PauseScrollPlugin);

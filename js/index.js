@@ -104,7 +104,6 @@ $(function(){
 
         //轉場動畫
         gsap.timeline()
-        .delay(1)
         .call(function(){
             currentCoverBody.destroy();
         })
@@ -179,7 +178,7 @@ $(function(){
     //trans-in
     $(".cover-item").on('click', function(e){
         e.preventDefault();
-        slide = $(this).attr('href');
+        slide = $(this).data('target');
         $slide = $(slide);
         originalWidth = $slide.width();
         transform = $slide.css('transform');
