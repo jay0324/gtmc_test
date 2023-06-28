@@ -93,11 +93,19 @@
             </div>
         </section>
 
-        <section class="pin-section-middle pin-section pin-content-wrapper">
+        <!-- 做一個空容器，用來對折用 -->
+        <section id="sectionWraper"></section>
+        <!-- 做一個空容器，用來對折用 -->
+      
+        <section id="SecondContent" class="pin-section-middle pin-section pin-content-wrapper">
             <div class="p-wrap">
+                <!-- 做一個空容器，不然真正的第一則會被蓋掉 -->
+                <div class="panel pin-layout"></div> 
+                <!-- 做一個空容器，不然真正的第一則會被蓋掉 -->
+
                 <div class="panel pin-layout">
                     <div class="left">
-                        <div class="area-1">我們的優勢</div>
+                        <div class="area-1">我們的優勢1</div>
                         <div class="area-2">
                             <div class="area-2-1">01 <span class="line"></span> 04</div>
                             <div class="area-2-2">專業知識和經驗</div>
@@ -110,6 +118,7 @@
                     <a href="#專業知識和經驗" class="link circle_link circle_link-primary">了解</a>
                     <div class="bg-obj" style="background-color:#A0ACBC"></div>
                 </div> 
+
                 <div class="panel pin-layout">
                     <div class="left">
                         <div class="area-1">我們的優勢</div>
@@ -125,6 +134,7 @@
                     <a href="#數位行銷專長" class="link circle_link circle_link-primary">了解</a>
                     <div class="bg-obj" style="background-color:#5B6983"></div>
                 </div>
+
                 <div class="panel pin-layout">
                     <div class="left">
                         <div class="area-1">我們的優勢</div>
@@ -140,7 +150,8 @@
                     <a href="#新市場洞察力" class="link circle_link circle_link-primary">了解</a>
                     <div class="bg-obj" style="background-color:#3B5274"></div>
                 </div> 
-                <div class="panel pin-layout last-pannel">
+
+                <div class="panel pin-layout">
                     <div class="left">
                         <div class="area-1">我們的優勢</div>
                         <div class="area-2">
@@ -155,12 +166,13 @@
                     <a href="#成果和效益" class="link circle_link circle_link-primary">了解</a>
                     <div class="bg-obj" style="background-color:#01244E"></div>
                 </div>
+
             </div>
             
         </section>
 
         <section id="caseContent" class="container-fluid">
-            <h1 class="text-right">成功案例</h1>
+            <h1 class="text-right pt-3">成功案例</h1>
             <div class="swiper caseSwiper">
                 <div class="swiper-wrapper">
                     <div id="meSlide" class="swiper-slide">
@@ -321,6 +333,10 @@
             <div id="ViewContainer">
                 <canvas id="3DView"></canvas>
             </div>
+        </section>
+
+        <section id="footer">
+            
         </section>
         
     </div>
