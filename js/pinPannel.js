@@ -1,3 +1,4 @@
+//宣告scrollbar
 let bodyScrollBar = Scrollbar.init(document.getElementById('scrollContent'), {
   damping: 0.05,
   delegateTo: document,

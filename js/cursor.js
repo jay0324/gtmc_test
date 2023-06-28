@@ -1,14 +1,14 @@
 
 $(function(){
-  var $circle = $('.circle'),
-      $follow = $('.circle-follow');
+  // var $circle = $('.circle');
+  var $follow = $('.circle-follow');
 
   function moveCircle(e) {
-    TweenLite.to($circle, 0.3, {
-        x: e.clientX,
-        y: e.clientY
-    });
-      TweenLite.to($follow, 0.7, {
+    // gsap.to($circle, 0.3, {
+    //     x: e.clientX,
+    //     y: e.clientY
+    // });
+      gsap.to($follow, 0.7, {
         x: e.clientX,
         y: e.clientY
     });  

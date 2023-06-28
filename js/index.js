@@ -82,10 +82,6 @@ $(function(){
           },
     });
 
-    // $(".popup-content").each(function(){
-    //     Scrollbar.init(this);
-    // });
-
     //當前打開的視窗
     var currentCoverBody, 
     originalWidth,
@@ -170,11 +166,12 @@ $(function(){
             'opacity': 1
         })
         .call(function(){
-            bodyScrollBar.options = {
-                delegateTo: document,
-                damping: 0.05,
-                continuousScrolling: true,
-            };
+            // bodyScrollBar.options = {
+            //     delegateTo: document,
+            //     damping: 0.05,
+            //     continuousScrolling: true,
+            // };
+            bodyScrollBar.updatePluginOptions('pause', { pause: false });
             caseSwiper.enable();
         })
     });
@@ -252,9 +249,8 @@ $(function(){
             'width': '100%',
         },'s3')
         .call(function(){
-            bodyScrollBar.options = {
-                continuousScrolling: false,
-            };
+            //執行擴充pause，trigger: true
+            bodyScrollBar.updatePluginOptions('pause', { pause: true });
         },null,'s3')
         .to($(".popup-content",$slide), {
             'top': '0'

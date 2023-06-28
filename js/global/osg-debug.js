@@ -38,7 +38,7 @@ osg.WARN = 3;
 osg.setNotifyLevel = function (level) {
     var log = function (str) {
         if (window.console !== undefined) {
-            window.console.log(str);
+            // window.console.log(str); //關閉log
         }
     };
 
@@ -3926,7 +3926,7 @@ osg.Program.prototype = osg.objectInehrit(osg.StateAttribute.prototype, {
 });
 
 osg.Program.create = function(vShader, fShader) {
-    console.log("osg.Program.create is deprecated use new osg.Program(vertex, fragment) instead");
+    // console.log("osg.Program.create is deprecated use new osg.Program(vertex, fragment) instead"); //關閉log
     var program = new osg.Program(vShader, fShader);
     return program;
 };
