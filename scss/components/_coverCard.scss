@@ -1,0 +1,27 @@
+.cover-card{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 1;
+    width:100%;
+
+    .cover-card-item{
+        display:none;
+        height:100vh;
+    }
+
+    .top{
+        height:50vh;
+        img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+        }
+    }
+
+    .content{
+        min-height:50vh;
+        background:#fff;
+        height:800px
+    }
+}

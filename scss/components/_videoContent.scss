@@ -1,0 +1,22 @@
+
+#videoCover{
+    overflow-y: initial;
+    width:100vw;
+    position:relative;
+
+    .content{
+        h1{
+            font-size:6vw;
+        }
+    }
+
+    .line{
+        width: 3px;
+        height: 300PX;
+        background: #ccc;
+        position: absolute;
+        z-index: 3;
+        bottom: -180px;
+        right: 5%;
+    }
+}

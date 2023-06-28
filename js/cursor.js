@@ -1,19 +1,18 @@
 
 $(function(){
-  
-var $circle = $('.circle'),
-    $follow = $('.circle-follow');
+  var $circle = $('.circle'),
+      $follow = $('.circle-follow');
 
-function moveCircle(e) {
+  function moveCircle(e) {
     TweenLite.to($circle, 0.3, {
-      x: e.clientX,
-      y: e.clientY
-  });
-    TweenLite.to($follow, 0.7, {
-      x: e.clientX,
-      y: e.clientY
-  });  
-}
+        x: e.clientX,
+        y: e.clientY
+    });
+      TweenLite.to($follow, 0.7, {
+        x: e.clientX,
+        y: e.clientY
+    });  
+  }
 
-$(window).on('mousemove', moveCircle);
+  $(".scroll-content").on('mousemove', moveCircle);
 });
