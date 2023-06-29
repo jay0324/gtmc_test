@@ -1,14 +1,18 @@
 $(function(){
     //FirstContent swiper
     var mySwiper = new Swiper(".mySwiper", {
+        speed: 1500,
         slidesPerView: "auto",
-        spaceBetween: 30,
-        loop:true,
-        autoplay:true,
+        simulateTouch: true,
+        shortSwipes: true,
+        freeMode:{
+            enabled: true,
+            sticky: true,
+        },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
-          },
+        },
     });
 
     // color change by dark and light area
