@@ -1,0 +1,28 @@
+#pager{
+    position: fixed;
+    left:0;
+    top:0;
+    z-index:2;
+    display:flex;
+    width:1px;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    button{
+        margin-left:100px;
+        margin-top:10px;
+        margin-bottom:10px;
+        width:10px;
+        height:15px;
+        background:#FBFBFB00;
+        border:2px solid #000;
+        border-radius: 100%;
+        transition:all 0.5s;
+        transform:scale(1);
+        &:hover,
+        &.active{
+            background:#FBFBFBFF;
+            transform:scale(1.5);
+        }
+    }
+}

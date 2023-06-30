@@ -15,6 +15,38 @@ $(function(){
         },
     });
 
+    //pager切換
+    //把page的位置先存好
+    const pannel_offset = [];
+    const pannel_offset_trigger = [];
+    $("#pager button").each(function(){
+        let index = $(this).index();
+        let target = $(this).data('target');
+        let trigger = document.querySelector(target).getBoundingClientRect().top + (($(window).height()*index) + ($(window).height()*0.5) + 5);
+        let top = document.querySelector(target).getBoundingClientRect().top + (($(window).height()*(index+1)) + ($(window).height()*0.5));
+        pannel_offset.push(top);
+        pannel_offset_trigger.push(trigger);
+    })
+
+    //點擊事件，定位至存好的資料
+    $("#pager button").on('click', function(){
+        let index = $(this).index();
+        bodyScrollBar.scrollTo(0, pannel_offset[index], 1000);
+        $('#pager button').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    //捲動事件，定位至存好的資料
+    bodyScrollBar.addListener((status) => {
+        let dod = pannel_offset_trigger.filter(item => bodyScrollBar.scrollTop > item);
+        let end = pannel_offset[pannel_offset.length-1] + $(window).height();
+        $('#pager button').removeClass('active');
+        if (dod.length > 0 && bodyScrollBar.scrollTop < end){
+            $(`#pager button:nth-child(${dod.length})`).addClass('active');
+        }
+        // console.log(bodyScrollBar.scrollTop, end);
+    });
+
     // color change by dark and light area
     let $logo = $(".logo-change");
     let $text = $(".text-change");
@@ -90,8 +122,7 @@ $(function(){
     var currentCoverBody, 
     originalWidth,
     slide, 
-    $slide,
-    transform;
+    $slide;
 
     //圖形轉換
     var transFrom = 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)';

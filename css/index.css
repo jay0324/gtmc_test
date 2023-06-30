@@ -898,6 +898,34 @@ a:focus {
   min-height: 400px;
 }
 
+#pager {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  width: 1px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+#pager button {
+  margin-left: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 10px;
+  height: 15px;
+  background: rgba(251, 251, 251, 0);
+  border: 2px solid #000;
+  border-radius: 100%;
+  transition: all 0.5s;
+  transform: scale(1);
+}
+#pager button:hover, #pager button.active {
+  background: #fbfbfb;
+  transform: scale(1.5);
+}
+
 :root {
   --primary: #14284D;
 }

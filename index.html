@@ -81,11 +81,12 @@
             </div>
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="assets/image/banner.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="assets/image/banner3.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="assets/image/banner4.jpg" alt=""></div>
                     <div class="swiper-slide" style="width:40vw"></div>
-            </div>
+                    <div class="swiper-slide"><img src="assets/image/banner.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/image/banner3.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/image/banner4.jpg" alt=""></div>
+                    <div class="swiper-slide" style="width:40vw"></div>
+                </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
@@ -101,7 +102,7 @@
                 <div class="panel pin-layout"></div> 
                 <!-- 做一個空容器，不然真正的第一則會被蓋掉 -->
 
-                <div class="panel pin-layout">
+                <div id="pannel1" class="panel pin-layout">
                     <div class="left">
                         <div class="area-1">我們的優勢1</div>
                         <div class="area-2">
@@ -117,7 +118,7 @@
                     <div class="bg-obj" style="background-color:#A0ACBC"></div>
                 </div> 
 
-                <div class="panel pin-layout">
+                <div id="pannel2" class="panel pin-layout">
                     <div class="left">
                         <div class="area-1">我們的優勢</div>
                         <div class="area-2">
@@ -133,7 +134,7 @@
                     <div class="bg-obj" style="background-color:#5B6983"></div>
                 </div>
 
-                <div class="panel pin-layout">
+                <div id="pannel3" class="panel pin-layout">
                     <div class="left">
                         <div class="area-1">我們的優勢</div>
                         <div class="area-2">
@@ -149,7 +150,7 @@
                     <div class="bg-obj" style="background-color:#3B5274"></div>
                 </div> 
 
-                <div class="panel pin-layout">
+                <div id="pannel4" class="panel pin-layout">
                     <div class="left">
                         <div class="area-1">我們的優勢</div>
                         <div class="area-2">
@@ -341,7 +342,14 @@
 
     <div class="circle-follow"></div>
 
-    
+    <div id="pager">
+        <div class="wraper">
+            <button data-target="#pannel1"></button>
+            <button data-target="#pannel2"></button>
+            <button data-target="#pannel3"></button>
+            <button data-target="#pannel4"></button>
+        </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
