@@ -126,7 +126,7 @@ $(function(){
 
     //圖形轉換
     var transFrom = 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)';
-    var transTo = 'polygon(100% 20%, 0 48%, 27% 65%, 53% 81%)';
+    var transTo = 'polygon(100% 0, 0 13%, 27% 57%, 53% 100%)';
 
     //trans-out
     $(".close-btn").on('click', function(e){

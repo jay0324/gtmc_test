@@ -1108,16 +1108,17 @@ osgGA.GlobeManipulator.prototype = osg.objectInehrit(osgGA.Manipulator.prototype
     },
 
     mousewheel: function(ev, intDelta, deltaX, deltaY) {
-	if (intDelta > 0){
-            if (this.distanceDecrease) {
-                this.distanceDecrease();
-            }
-	}
-	else if (intDelta < 0){
-            if (this.distanceIncrease) {
-                this.distanceIncrease();
-            }
-	}
+        //暫停滾輪放大
+        // if (intDelta > 0){
+        //         if (this.distanceDecrease) {
+        //             this.distanceDecrease();
+        //         }
+        // }
+        // else if (intDelta < 0){
+        //         if (this.distanceIncrease) {
+        //             this.distanceIncrease();
+        //         }
+        // }
     },
     distanceIncrease: function() {
         var h = this.height;
