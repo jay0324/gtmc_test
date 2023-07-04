@@ -1,22 +1,22 @@
 
-.circle {
-    position: fixed;
-    background-color: #fff;
-    width: 10px;
-    height: 10px;
-    left:-10px;
-    top:-10px;
-    border-radius: 100%;
-    z-index: 1;
-    // user-select: none;
-    // pointer-events: none;
-    z-index: 10000;
-    transform: scale(1);
-    &.active {
-        opacity: 1;
-        transform: scale(0);
-    }
-}
+// .circle {
+//     position: fixed;
+//     background-color: #fff;
+//     width: 10px;
+//     height: 10px;
+//     left:-10px;
+//     top:-10px;
+//     border-radius: 100%;
+//     z-index: 1;
+//     // user-select: none;
+//     // pointer-events: none;
+//     z-index: 10000;
+//     transform: scale(1);
+//     &.active {
+//         opacity: 1;
+//         transform: scale(0);
+//     }
+// }
 
 .circle-follow {
    position: fixed;

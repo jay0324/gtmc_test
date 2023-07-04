@@ -44,7 +44,6 @@ $(function(){
         if (dod.length > 0 && bodyScrollBar.scrollTop < end){
             $(`#pager button:nth-child(${dod.length})`).addClass('active');
         }
-        // console.log(bodyScrollBar.scrollTop, end);
     });
 
     // color change by dark and light area
@@ -60,6 +59,7 @@ $(function(){
                 start: "top top",
                 end: "top top",
                 scrub: 1,
+                scroller: ".scroller",
             }
         }).to($logo, {
             fill: "#11274a"
@@ -75,6 +75,7 @@ $(function(){
                 start: "top top",
                 end: "top top",
                 scrub: 1,
+                scroller: ".scroller",
             }
         }).to($logo, {
             fill: "#ffffff"
@@ -110,7 +111,7 @@ $(function(){
     var caseSwiper = new Swiper(".caseSwiper", {
         slidesPerView: 3,
         spaceBetween: 30,
-        loop:true,
+        loop:false,
         autoplay:false,
         navigation: {
             nextEl: ".swiper-button-next",
@@ -137,36 +138,28 @@ $(function(){
         //移動目前視窗到最上面
         currentCoverBody.scrollTo(0,0,1*1000);
 
+        //異步計時清除
+        setTimeout(()=>currentCoverBody.destroy(), 1100);
+
         //轉場動畫
         gsap.timeline()
-        .call(function(){
-            currentCoverBody.destroy();
-        })
         .to($(".popup-content",$slide), {
-            'display':'block',
-            'top': '100%'
-        })
-        .to($(".popup-content",$slide), {
-            duration: 1,
-            'top': '100%'
+            'margin-top': '200%'
         })
         .to($(".popup-content",$slide), {
             'display':'none',
             'height': '0',
             'width': '0',
-        },'s3')
+        },'s5')
         .to($slide, {
             'width': '300px',
             'height': '300px',
             'clip-path': transTo
-        },'s3')
+        },'s5')
         .to($slide, {
-            duration: 0.5,
+            duration: 0.2,
             'clip-path': transTo
         })
-        .to($(".zoom-cover", $slide), {
-            'height': '100%',
-        },'s2')
         .to($(".caseSwiper"), {
             'width': '80%',
             'height': '70vh',
@@ -176,7 +169,10 @@ $(function(){
         .to($slide, {
             duration: 0.8,
             'clip-path': transTo,
-        })
+        },'s2')
+        .to($(".zoom-cover", $slide), {
+            'height': '100%',
+        },'s1')
         .to($slide, {
             'display':'flex',
             'clip-path': transFrom,
@@ -200,13 +196,11 @@ $(function(){
             'opacity': 1
         })
         .call(function(){
-            // bodyScrollBar.options = {
-            //     delegateTo: document,
-            //     damping: 0.05,
-            //     continuousScrolling: true,
-            // };
             bodyScrollBar.updatePluginOptions('pause', { pause: false });
             caseSwiper.enable();
+        })
+        .to("#navBar", {
+            'top': '0'
         })
     });
 
@@ -226,6 +220,13 @@ $(function(){
         
         //進行轉場動畫
         gsap.timeline()
+        .call(function(){
+            //執行擴充pause，trigger: true
+            bodyScrollBar.updatePluginOptions('pause', { pause: true });
+        },null,'s1')
+        .to("#navBar", {
+            'top': '-100px'
+        },'s1')
         .to($(".content", $slide), {
             'opacity': 0
         },'s1')
@@ -265,14 +266,16 @@ $(function(){
             'width': '300px',
             'height': '300px',
             'clip-path': transTo,
-        })
+        },'st')
+        .to($slide, {
+            'clip-path': transFrom
+        },'st')
         .to($slide, {
             'width': '100%',
             'height': 'auto',
             'left': 0,
             'top': 0,
-            'clip-path': transFrom
-        })
+        },'s3')
         .to($(".zoom-cover", $slide), {
             'height': '50vh',
             'top': 0
@@ -282,12 +285,9 @@ $(function(){
             'height': 'auto',
             'width': '100%',
         },'s3')
-        .call(function(){
-            //執行擴充pause，trigger: true
-            bodyScrollBar.updatePluginOptions('pause', { pause: true });
-        },null,'s3')
         .to($(".popup-content",$slide), {
-            'top': '0'
+            'top': '0',
+            'margin-top': '0'
         },'s4')
         .to($(".popup-content",$slide), {
             duration: 1,

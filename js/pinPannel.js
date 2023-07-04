@@ -67,7 +67,6 @@ ScrollTrigger.create({
   invalidateOnRefresh: true,
   onLeave: () => {
     gsap.to("#caseContent", {
-      ease: "none",
       stagger: 0.5,
       scrollTrigger: {
         trigger: ".panel:last-child",
@@ -75,12 +74,44 @@ ScrollTrigger.create({
         end: "+=100%",
         scrub: true,
         pin: true,
-        pinSpacing:false,
+        pinSpacing:true,
         scroller: ".scroller",
         // markers: true,
       }
     });
   },
+});
+
+
+gsap.to('#pager',{
+  scrollTrigger: {
+    trigger: "#caseContent",
+    start: "bottom bottom",
+    end: "bottom top",
+    pin: true,
+    pinSpacing:true,
+    scroller: ".scroller",
+    onEnter: () => {
+      gsap.to("#pager", {
+        'left': '-100px',
+      });
+    },
+    onEnterBack: () => {
+      gsap.to("#pager", {
+        'left': '-100px',
+      });
+    },
+    onLeave: () => {
+      gsap.to("#pager", {
+        'left': '0',
+      });
+    },
+    onLeaveBack: () => {
+      gsap.to("#pager", {
+        'left': '0',
+      });
+    },
+  }
 });
 
 //sectionWraper
