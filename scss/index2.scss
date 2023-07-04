@@ -1,0 +1,40 @@
+@import 'lib/_rwd';
+@import 'components/_videoCover';
+@import 'components/_line_animate';
+@import 'components/_cursor';
+@import 'components/_circle_link';
+@import 'components/_firstContent';
+@import 'components/_pinPannel';
+@import 'components/_polygon';
+@import 'components/_navBar2';
+@import 'components/_videoContent';
+@import 'components/_caseContent2';
+@import 'components/_coverCard';
+@import 'components/_footer';
+@import 'components/_pager';
+
+:root{
+    --primary: #14284D;
+}
+
+body,html{
+    scroll-behavior: smooth;
+    overflow-x:hidden;
+}
+
+body{
+    overflow-x:hidden;
+    background:var(--white);
+}
+
+.logo{
+    width:100px;
+    height:auto;
+    svg{
+        fill: var(--white);
+    }
+}
+
+.nav-bg{
+    background: #ffffff55;
+}

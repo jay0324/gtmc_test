@@ -9,5 +9,5 @@ $(function(){
     });  
   }
 
-  $(".scroll-content").on('mousemove', moveCircle);
+  $("body").on('mousemove', moveCircle);
 });
