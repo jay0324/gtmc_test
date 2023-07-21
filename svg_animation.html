@@ -7,8 +7,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/development.css" />
     <link rel="stylesheet" href="css/webdesign.css" />
+    <link rel="stylesheet" href="css/creation.css" />
 </head>
 
 <body>
@@ -1044,6 +1046,27 @@
         </svg>
     </div>
 
+    <div id="creation_section" class="container-fluid">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <canvas id="myChart1"></canvas>
+              </div>
+              <div class="swiper-slide">
+                <canvas id="myChart2"></canvas>
+              </div>
+              <div class="swiper-slide">
+                <canvas id="myChart3"></canvas>
+              </div>
+              <div class="swiper-slide">
+                <canvas id="myChart4"></canvas>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        
+    </div>
+
     <div class="container-fluid text-center bg-light">bottom area start<div style="height:100vh"></div>bottom area end
     </div>
 
@@ -1052,8 +1075,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/development.js"></script>
     <script src="js/webdesign.js"></script>
+    <script src="js/creation.js"></script>
 </body>
 
 </html>
