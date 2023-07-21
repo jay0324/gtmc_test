@@ -521,14 +521,23 @@ footer {
   --primary: #14284D;
 }
 
+html {
+  overflow: auto;
+  height: auto;
+}
+
 body, html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
-  overflow-x: hidden;
   background: var(--white);
+}
+
+#wrapwrap {
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
 }
 
 .logo {

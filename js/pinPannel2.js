@@ -1,3 +1,4 @@
+
 //sectionWraper
 gsap.to("#sectionWraper", {
   'top': 0, 
@@ -25,6 +26,7 @@ images.forEach((image, i) => {
       scrub: true,
       toggleActions: "play none reverse none",
       invalidateOnRefresh: true,
+      markers: true
     },
   });
 
@@ -52,7 +54,7 @@ ScrollTrigger.create({
         scrub: true,
         pin: true,
         pinSpacing:false,
-        // markers: true,
+        markers: true,
       }
     });
   },

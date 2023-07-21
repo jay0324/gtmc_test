@@ -17,14 +17,26 @@
     --primary: #14284D;
 }
 
+html{
+    overflow:auto;
+    height:auto;
+}
+
 body,html{
     scroll-behavior: smooth;
-    overflow-x:hidden;
+    // overflow:hidden;
+    // height:100%;
 }
 
 body{
-    overflow-x:hidden;
+    // overflow:hidden !important;
     background:var(--white);
+}
+
+#wrapwrap{
+    height:100%;
+    overflow:auto;
+    overflow-x: hidden;
 }
 
 .logo{
