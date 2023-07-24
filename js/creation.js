@@ -85,6 +85,8 @@ $(function () {
           title: {
             display: true,
             text: titles[idx],
+            padding: 30,
+            fullSize: false
           },
           datalabels: {
             display: false,
@@ -116,17 +118,24 @@ $(function () {
   };
 
   //綁定
+  let trigger_creation = false;
   function createCharts() {
-    charts.push(new Chart($('#myChart1'), configset[0]));
-    charts.push(new Chart($('#myChart2'), configset[1]));
-    charts.push(new Chart($('#myChart3'), configset[2]));
-    charts.push(new Chart($('#myChart4'), configset[3]));
-
-    charts[0].data = datasets[0]
-    charts[0].update()
-
-    charts[1].data = datasets[1]
-    charts[1].update()
+    $("#wrapwrap").on('scroll', () => {
+      var pos = $("#creation_section").offset().top - $(window).height();
+      if (pos < 0 && !trigger_creation) {
+        charts.push(new Chart($('#myChart1'), configset[0]));
+        charts.push(new Chart($('#myChart2'), configset[1]));
+        charts.push(new Chart($('#myChart3'), configset[2]));
+        charts.push(new Chart($('#myChart4'), configset[3]));
+        charts[0].data = datasets[0]
+        charts[0].update()
+        charts[1].data = datasets[1]
+        charts[1].update()
+        swiper.autoplay.start();
+        trigger_creation = true;
+      }
+    });
+    
   }
 
   // Initialize Swiper
@@ -155,8 +164,11 @@ $(function () {
         charts[active].update()
         
         charts[active].data = datasets[active]
+        charts[active].options.plugins.datalabels.display = false;
         charts[active].update()
       }
     }
   });
+
+  swiper.autoplay.stop();
 });
