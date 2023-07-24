@@ -1,15 +1,38 @@
 $(function () {
+  //============資料提供區
   const labels = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
+  const myData = [
+    {
+      labels: labels,
+      l_title: '% Compaines',
+      title: 'Business who see video as an important part of their marketing strategy',
+      data: [78, 88, 82, 85, 91, 92, 93, 92, 96]
+    },
+    {
+      labels: labels,
+      l_title: '% Compaines',
+      title: 'Marketers who say video has increased traffic',
+      data: [55, 62, 76, 76, 84, 87, 85, 87, 91]
+    },
+    {
+      labels: labels,
+      l_title: '% Compaines',
+      title: 'Marketers who say video has given them a good ROI',
+      data: [76, 83, 78, 83, 88, 87, 87, 92, 93]
+    },
+    {
+      labels: labels,
+      l_title: '% Compaines',
+      title: 'Marketers who say video has given them a good ROI',
+      data: [76, 83, 78, 83, 88, 87, 87, 92, 93]
+    }
+  ];
+  //===============資料提供區
+
   const addPercentageSymbol = (value) => value + "%";
   const configset = [];
+  const datasets = [];
   const charts = [];
-  const titles = [
-    '1 Business who see video as an important part of their marketing strategy',
-    '2 Business who see video as an important part of their marketing strategy',
-    '3 Business who see video as an important part of their marketing strategy',
-    '4 Business who see video as an important part of their marketing strategy',
-  ];
-
   const baseDataset = {
     labels: labels,
     datasets: [
@@ -21,51 +44,20 @@ $(function () {
     ],
   }
 
-  //資料
-  const datasets =  [
-    {
-      labels: labels,
+  //設定值
+  for(let idx in myData) {
+    //資料
+    datasets[idx] = {
+      labels: myData[idx].labels,
       datasets: [
         {
-          data: [78, 88, 82, 85, 91, 92, 93, 92, 96],
-          backgroundColor: "#A0ACBC",
-        },
-      ],
-    },
-    {
-      labels: labels,
-      datasets: [
-        {
-          label: "2Business who see video as an important part of their marketing strategy",
-          data: [20, 88, 82, 85, 91, 92, 93, 92, 96],
-          backgroundColor: "#A0ACBC",
-        },
-      ],
-    },
-    {
-      labels: labels,
-      datasets: [
-        {
-          label: "3Business who see video as an important part of their marketing strategy",
-          data: [40, 88, 82, 85, 91, 92, 93, 92, 96],
-          backgroundColor: "#A0ACBC",
-        },
-      ],
-    },
-    {
-      labels: labels,
-      datasets: [
-        {
-          label: "4Business who see video as an important part of their marketing strategy",
-          data: [60, 88, 82, 85, 91, 92, 93, 92, 96],
+          data: myData[idx].data,
           backgroundColor: "#A0ACBC",
         },
       ],
     }
-  ];
 
-  //設定值
-  for(let idx in datasets) {
+    //設定
     configset[idx] = {
       plugins: [ChartDataLabels],
       type: "bar",
@@ -84,7 +76,7 @@ $(function () {
           },
           title: {
             display: true,
-            text: titles[idx],
+            text: myData[idx].title,
             padding: 30,
             fullSize: false
           },
@@ -106,7 +98,7 @@ $(function () {
             },
             title: { // Add the custom label for y-axis
               display: true,
-              text: 'Custom Y-Axis Label', // Your custom label here
+              text: myData[idx].l_title, // Your custom label here
               font: {
                 weight: "bold", // Optional, set font weight to bold for better visibility
               },
