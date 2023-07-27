@@ -134,6 +134,9 @@ $(function(){
         slide = $(this).data('target');
         $slide = $(slide);
 
+        //加入暫停觸發標記
+        $slide.removeClass('no-trigger');
+
         //轉場動畫
         gsap.timeline()
         .to($slide, {scrollTo: 0},'bk2top')
@@ -218,6 +221,9 @@ $(function(){
         $slide = $(slide);
         originalWidth = $slide.width();
         transform = $slide.css('transform');
+
+        //加入暫停觸發標記
+        $(this).addClass('no-trigger');
 
         //停止swiper
         caseSwiper.disable();

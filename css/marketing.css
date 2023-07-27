@@ -102,58 +102,81 @@ html, body {
   background: var(--success);
 }
 
-#development_section {
-  height: 100vh;
-  width: 100%;
-  margin-bottom: 300px;
-  margin-top: 300px;
+#marketing_section {
+  padding: 0;
 }
 
-#development {
-  height: 100% !important;
-  width: 100% !important;
+.trans-card-wraper {
+  padding-left: 8vw;
+  height: 85vh;
 }
-
-.rotate {
-  transform: rotate(0);
-  transform-box: fill-box;
-  transform-origin: center;
-  animation-name: rotate;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+.trans-card-wraper .clear {
+  clear: both;
 }
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0);
-  }
-  50% {
-    transform: rotate(-180deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
-#webdesign_section {
-  height: 100vh;
-  width: 100%;
-  margin-bottom: 300px;
-}
-
-#webdesign {
-  height: 100% !important;
-  width: 100% !important;
-}
-
-#creation_section {
-  width: 100%;
-}
-
-.creation {
+.trans-card-wraper .trans-card {
+  height: 100%;
   position: relative;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  background: #fff;
+  width: 33.3333333333%;
+  float: left;
+  padding-left: 30px;
+  padding-bottom: 30px;
 }
-
-.chartjs-datalabel {
-  opacity: 0;
-}/*# sourceMappingURL=svg_animation.css.map */
+.trans-card-wraper .trans-card.active {
+  max-width: none !important;
+}
+.trans-card-wraper .trans-card .zoom-cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.trans-card-wraper .trans-card .zoom-cover .content {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  color: var(--white);
+  padding: 40px;
+}
+.trans-card-wraper .trans-card .zoom-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.trans-card-wraper .trans-card .popup-content {
+  display: none;
+  position: relative;
+  width: 0;
+  height: 0;
+  transition: all 0.5s;
+  top: 100%;
+}
+.trans-card-wraper .trans-card .popup-content .inner-wrap {
+  padding: 20px;
+  background: #fff;
+}
+.trans-card-wraper .trans-card .popup-content .inner-wrap .close-btn {
+  border: 0;
+  background: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.trans-card-wraper .trans-card .popup-content .inner-wrap .avatar {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+}/*# sourceMappingURL=marketing.css.map */

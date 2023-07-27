@@ -1,0 +1,15 @@
+html,body{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#wrapwrap {
+    z-index: 0;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    overflow: auto;
+    height:100%;
+    overflow-x:hidden;
+}

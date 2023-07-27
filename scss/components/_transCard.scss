@@ -1,0 +1,81 @@
+#marketing_section{
+    padding:0;
+}
+
+.trans-card-wraper{
+    padding-left: 8vw;
+    height: 85vh;
+
+    .clear{
+        clear:both;
+    }
+
+    .trans-card{
+        height:100%;
+        position:relative;
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        background:#fff;
+        width: calc(100% / 3);
+        float: left;
+        padding-left:30px;
+        padding-bottom:30px;
+
+        &.active{
+            max-width: none !important;
+        }
+
+      .zoom-cover{
+        position:relative;
+        width: 100%;
+        height: 100%;
+        .content{
+          position: absolute;
+          display: block;
+          bottom:0;
+          left:0;
+          text-align: left;
+          color:var(--white);
+          padding:40px;
+        }
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .popup-content{
+        display:none;
+        position:relative;
+        width:0;
+        height:0;
+        transition:all 0.5s;
+        top:100%;
+        .inner-wrap{
+          padding:20px;
+          background:#fff;
+
+          .close-btn{
+            border:0;
+            background:none;
+            position:absolute;
+            top:20px;
+            right:20px;
+          }
+
+          .avatar{
+            width:40px;
+            height:40px;
+            object-fit: cover;
+            border-radius:100%;
+          }
+        }
+      }
+    }
+}

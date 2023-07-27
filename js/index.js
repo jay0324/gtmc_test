@@ -202,15 +202,25 @@ $(function(){
         .to("#navBar", {
             'top': '0'
         })
+        .call(function(){
+            //加入暫停觸發標記
+            $(".cover-item", $slide).removeClass('no-trigger');
+        })
     });
 
     //trans-in
     $(".cover-item").on('click', function(e){
         e.preventDefault();
+
+        if ($(this).hasClass('no-trigger')) return;
+
         slide = $(this).data('target');
         $slide = $(slide);
         originalWidth = $slide.width();
         transform = $slide.css('transform');
+
+        //加入暫停觸發標記
+        $(this).addClass('no-trigger');
 
         //定位到目標位置
         bodyScrollBar.scrollIntoView(document.querySelector('#caseContent'), 2000);
