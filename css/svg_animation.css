@@ -112,6 +112,7 @@ html, body {
 #development {
   height: 100% !important;
   width: 100% !important;
+  opacity: 0;
 }
 
 .rotate {
@@ -144,6 +145,7 @@ html, body {
 #webdesign {
   height: 100% !important;
   width: 100% !important;
+  opacity: 0;
 }
 
 #creation_section {

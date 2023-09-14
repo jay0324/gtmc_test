@@ -112,19 +112,22 @@ $(function () {
   //綁定
   let trigger_creation = false;
   function createCharts() {
+    charts.push(new Chart($('#myChart1'), configset[0]));
+    charts.push(new Chart($('#myChart2'), configset[1]));
+    charts.push(new Chart($('#myChart3'), configset[2]));
+    charts.push(new Chart($('#myChart4'), configset[3]));
     $("#wrapwrap").on('scroll', () => {
-      var pos = $("#creation_section").offset().top - $(window).height();
+      var pos = $("#creation_section").offset().top - ($(window).height()/2);
       if (pos < 0 && !trigger_creation) {
-        charts.push(new Chart($('#myChart1'), configset[0]));
-        charts.push(new Chart($('#myChart2'), configset[1]));
-        charts.push(new Chart($('#myChart3'), configset[2]));
-        charts.push(new Chart($('#myChart4'), configset[3]));
-        charts[0].data = datasets[0]
-        charts[0].update()
-        charts[1].data = datasets[1]
-        charts[1].update()
-        swiper.autoplay.start();
-        trigger_creation = true;
+        setTimeout(function(){
+          charts[0].data = datasets[0]
+          charts[0].update()
+          charts[1].data = datasets[1]
+          charts[1].update()
+          swiper.autoplay.start();
+          trigger_creation = true;
+        }, 1000);
+
       }
     });
     

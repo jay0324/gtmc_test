@@ -3,11 +3,11 @@ $(function(){
         var $target = $('#webdesign');
         var trigger_webdesign = false;
         $("#wrapwrap").on('scroll', () => {
-            var pos = $("#webdesign_section").offset().top - $(window).height();
+            var pos = $("#webdesign_section").offset().top - ($(window).height()/2);
             if (pos < 0 && !trigger_webdesign) {
                 gsap.timeline()
-                .from($target, {
-                    opacity: 0
+                .to($target, {
+                    opacity: 1
                 })
                 .from($("#center", $target), {
                     opacity: 0
