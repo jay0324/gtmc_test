@@ -9,15 +9,15 @@ $(function(){
             'stroke-dashoffset': circle_mask_length,
         });
         $("#wrapwrap").on('scroll', () => {
-            var pos = $("#development_section").offset().top - ($(window).height()/2);
+            var pos = $("#development_section").offset().top - $(window).height();
             if (pos < 0 && !trigger_development) {
                 gsap.timeline()
                 .to($target, {
                     opacity: 1
-                })
+                },'enter')
                 .from($("#center", $target), {
                     opacity: 0
-                })
+                },'enter')
                 .from($("#center_x5F_1", $target), {
                     opacity: 0
                 })
