@@ -119,7 +119,7 @@ html, body {
   transform-box: fill-box;
   transform-origin: center;
   animation-name: rotate;
-  animation-duration: 5s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }

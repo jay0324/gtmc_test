@@ -70,7 +70,7 @@ $(function(){
                 })
                 .to($("#circle_mask_main", $target), {
                     'stroke-dashoffset': 0,
-                    duration: 3
+                    duration: 5
                 })
                 .from($("#arraw", $target), {
                     opacity: 0
